@@ -2,7 +2,7 @@
 'use client';
 
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { X, Loader2 } from 'lucide-react';
@@ -19,7 +19,7 @@ const leadSchema = z.object({
   notes: z.string().optional(),
 });
 
-type LeadFormValues = z.infer<typeof leadSchema>;
+type LeadFormValues = z.input<typeof leadSchema>;
 
 export function AddLeadForm({ onClose, onRefresh }: { onClose: () => void; onRefresh: () => void }) {
   const {
@@ -36,7 +36,7 @@ export function AddLeadForm({ onClose, onRefresh }: { onClose: () => void; onRef
     }
   });
 
-  const onSubmit = async (data: LeadFormValues) => {
+  const onSubmit: SubmitHandler<LeadFormValues> = async (data:any) => {
     try {
       await createLead(data);
       reset();

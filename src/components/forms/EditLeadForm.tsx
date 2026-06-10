@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { X, Loader2 } from 'lucide-react';
@@ -28,7 +28,7 @@ const leadSchema = z.object({
   status: z.string().optional(),
 });
 
-type LeadFormValues = z.infer<typeof leadSchema>;
+type LeadFormValues = z.input<typeof leadSchema>;
 
 interface EditLeadFormProps {
   leadId: string;
@@ -76,7 +76,7 @@ export function EditLeadForm({ leadId, onClose, onRefresh }: EditLeadFormProps) 
     fetchLead();
   }, [leadId, reset]);
 
-  const onSubmit = async (data: LeadFormValues) => {
+  const onSubmit = async (data:any) => {
     try {
       await updateLead(leadId, data);
       onRefresh();
