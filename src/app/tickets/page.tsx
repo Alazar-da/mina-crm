@@ -5,7 +5,7 @@ import {
   Plus, Search, Filter, MoreHorizontal, Ticket, Clock, AlertCircle, Loader2
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { getTickets } from '@/actions/ticketActions';
+/* import { getTickets } from '@/actions/ticketActions'; */
 import { AddTicketForm } from '@/components/forms/AddTicketForm';
 
 export default function TicketsPage() {
@@ -13,7 +13,7 @@ export default function TicketsPage() {
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const fetchData = async () => {
+/*   const fetchData = async () => {
     try {
       setLoading(true);
       const data = await getTickets();
@@ -27,7 +27,7 @@ export default function TicketsPage() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, []); */
 
   const getPriorityColor = (p: string) => {
     switch (p) {
@@ -108,7 +108,7 @@ export default function TicketsPage() {
         )}
       </div>
 
-      {isModalOpen && <AddTicketForm onClose={() => setIsModalOpen(false)} onRefresh={fetchData} />}
-    </div>
+      {/* {isModalOpen && <AddTicketForm onClose={() => setIsModalOpen(false)} onRefresh={fetchData} />}
+     */}</div>
   );
 }

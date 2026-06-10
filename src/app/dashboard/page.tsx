@@ -12,14 +12,14 @@ import {
 } from 'lucide-react';
 import { KPICard } from '@/components/dashboard/KPICard';
 import { RevenueChart, StatusDistribution } from '@/components/dashboard/Charts';
-import { getDashboardStats } from '@/actions/reportActions';
+/* import { getDashboardStats } from '@/actions/reportActions'; */
 import { cn } from '@/lib/utils';
 
 export default function Dashboard() {
   const [stats, setStats] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+/*   useEffect(() => {
     async function fetchStats() {
       try {
         const data = await getDashboardStats();
@@ -31,7 +31,7 @@ export default function Dashboard() {
       }
     }
     fetchStats();
-  }, []);
+  }, []); */
 
   if (loading) {
     return (

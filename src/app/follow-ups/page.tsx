@@ -14,7 +14,7 @@ import {
   Loader2
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { getFollowUps } from '@/actions/followUpActions';
+/* import { getFollowUps } from '@/actions/followUpActions'; */
 
 import { AddFollowUpForm } from '@/components/forms/AddFollowUpForm';
 
@@ -23,7 +23,8 @@ export default function FollowUpsPage() {
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const fetchData = async () => {
+
+/*   const fetchData = async () => {
     try {
       setLoading(true);
       const data = await getFollowUps();
@@ -33,11 +34,11 @@ export default function FollowUpsPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }; */
 
-  useEffect(() => {
+/*   useEffect(() => {
     fetchData();
-  }, []);
+  }, []); */
 
   const getTypeIcon = (type: string) => {
     switch (type) {
@@ -166,7 +167,7 @@ export default function FollowUpsPage() {
           })}
         </div>
       </div>
-      {isModalOpen && <AddFollowUpForm onClose={() => setIsModalOpen(false)} onRefresh={fetchData} />}
-    </div>
+      {/* {isModalOpen && <AddFollowUpForm onClose={() => setIsModalOpen(false)} onRefresh={fetchData} />}
+  */}   </div>
   );
 }

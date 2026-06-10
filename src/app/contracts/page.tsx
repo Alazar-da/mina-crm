@@ -5,13 +5,13 @@ import {
   Plus, Search, Filter, MoreHorizontal, FileText, Calendar, DollarSign, Loader2
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { getContracts } from '@/actions/contractActions';
+/* import { getContracts } from '@/actions/contractActions'; */
 
 export default function ContractsPage() {
   const [contracts, setContracts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+/*   useEffect(() => {
     async function fetchData() {
       try {
         const data = await getContracts();
@@ -23,7 +23,7 @@ export default function ContractsPage() {
       }
     }
     fetchData();
-  }, []);
+  }, []); */
 
   return (
     <div className="space-y-6">

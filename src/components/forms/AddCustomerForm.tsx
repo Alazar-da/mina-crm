@@ -5,8 +5,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { X, Loader2 } from 'lucide-react';
-import { createCustomer } from '@/actions/customerActions';
+import { X, Loader2 } from 'lucide-react';/* 
+import { createCustomer } from '@/actions/customerActions'; */
 
 const customerSchema = z.object({
   company_name: z.string().min(2, 'Company name is required'),
@@ -40,7 +40,7 @@ export function AddCustomerForm({ onClose }: { onClose: () => void }) {
   });
 
   const onSubmit = async (data: CustomerFormValues) => {
-    try {
+/*     try {
       await createCustomer({
         ...data,
         status: 'new_lead',
@@ -53,7 +53,7 @@ export function AddCustomerForm({ onClose }: { onClose: () => void }) {
     } catch (error) {
       console.error('Failed to create customer:', error);
       alert('Error creating customer. Please try again.');
-    }
+    } */
   };
 
   return (
