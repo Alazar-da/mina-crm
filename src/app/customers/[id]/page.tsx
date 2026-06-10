@@ -27,8 +27,8 @@ import {
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { getCustomerById, getCustomerNotes, getCustomerStatusHistory, addCustomerNote, updateCustomerStatus } from '@/actions/customerActions';
-
+/* import { getCustomerById, getCustomerNotes, getCustomerStatusHistory, addCustomerNote, updateCustomerStatus } from '@/actions/customerActions';
+ */
 const statusStyles: Record<string, string> = {
   'active': 'bg-emerald-50 text-emerald-700 border-emerald-200',
   'negotiation': 'bg-blue-50 text-blue-700 border-blue-200',
@@ -62,7 +62,7 @@ export default function CustomerProfilePage({ params }: { params: { id: string }
   const [showStatusMenu, setShowStatusMenu] = useState(false);
 
   const fetchData = async () => {
-    try {
+/*     try {
       const [customerData, notesData, historyData] = await Promise.all([
         getCustomerById(params.id),
         getCustomerNotes(params.id),
@@ -75,7 +75,7 @@ export default function CustomerProfilePage({ params }: { params: { id: string }
       console.error('Error fetching customer data:', error);
     } finally {
       setLoading(false);
-    }
+    } */
   };
 
   useEffect(() => {
@@ -86,7 +86,7 @@ export default function CustomerProfilePage({ params }: { params: { id: string }
     if (!newNote.trim()) return;
     
     setSubmitting(true);
-    try {
+  /*   try {
       await addCustomerNote(params.id, newNote);
       await fetchData();
       setNewNote('');
@@ -96,18 +96,18 @@ export default function CustomerProfilePage({ params }: { params: { id: string }
       alert('Failed to add note. Please try again.');
     } finally {
       setSubmitting(false);
-    }
+    } */
   };
 
   const handleStatusChange = async (newStatus: string) => {
-    try {
+/*     try {
       await updateCustomerStatus(params.id, newStatus as any);
       await fetchData();
       setShowStatusMenu(false);
     } catch (error) {
       console.error('Error updating status:', error);
       alert('Failed to update status. Please try again.');
-    }
+    } */
   };
 
   const formatStatus = (status: string) => {

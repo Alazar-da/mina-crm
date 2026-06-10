@@ -12,7 +12,7 @@ import {
   ChevronDown
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { getCustomers, deleteCustomer } from '@/actions/customerActions';
+/* import { getCustomers, deleteCustomer } from '@/actions/customerActions'; */
 import { Customer } from '@/types';
 import { AddCustomerForm } from '@/components/forms/AddCustomerForm';
 import { useRouter } from 'next/navigation';
@@ -64,7 +64,7 @@ export default function CustomersPage() {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
   const fetchCustomers = async () => {
-    try {
+/*     try {
       setLoading(true);
       const data = await getCustomers();
       setCustomers(data);
@@ -73,7 +73,7 @@ export default function CustomersPage() {
       console.error('Failed to fetch customers:', error);
     } finally {
       setLoading(false);
-    }
+    } */
   };
 
   useEffect(() => {
@@ -101,7 +101,7 @@ export default function CustomersPage() {
   }, [searchTerm, statusFilter, customers]);
 
   const handleDeleteCustomer = async () => {
-    if (selectedCustomer) {
+/*     if (selectedCustomer) {
       try {
         await deleteCustomer(selectedCustomer.id);
         await fetchCustomers();
@@ -111,7 +111,7 @@ export default function CustomersPage() {
         console.error('Failed to delete customer:', error);
         alert('Failed to delete customer. Please try again.');
       }
-    }
+    } */
   };
 
   const formatStatus = (status: string) => {
